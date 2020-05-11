@@ -1,0 +1,34 @@
+﻿@page
+@model BooklistApp.Pages.Booklists.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<form method="post">
+    <div class="container row">
+        <div class="col">
+            <label asp-for="book.Name"></label>
+        </div>
+        <div class="col">
+            <input asp-for="book.Name" class="form-control" />
+        </div>
+    </div> <br />
+    <div class="container row">
+        <div class="col">
+            <label asp-for="book.Author"></label>
+        </div>
+        <div class="col">
+            <input asp-for="book.Author" class="form-control" />
+        </div>
+    </div> <br />
+    <div class="container row">
+        <div class="col">
+            <input type="submit"  class="btn btn-primary" />
+
+        </div>
+        <div class="col">
+            <a asp-page="Booklists" class="btn btn-secondary">Back to Lists</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,63 @@
+﻿@page
+@model BooklistApp.Pages.Booklists.BooklistsModel
+@{
+    ViewData["Title"] = "Booklists";
+}
+
+
+
+<div class="container row">
+    <div class="col-lg-6">
+        <h1>Booklists</h1>
+    </div>
+    <div class="col-lg-6">
+        <a asp-page="Create" class="btn btn-outline-primary">
+            Create New Book
+        </a>
+
+    </div>
+    <div class="col-lg-12">
+        <form method="post">
+            @if (Model.books.Count() > 0)
+            {
+                <table class="table">
+                    <tr>
+                        <th>
+                            <label asp-for="books.FirstOrDefault().Name"></label>
+                        </th>
+                        <th>
+                            <label asp-for="books.FirstOrDefault().Author"></label>
+
+                        </th>
+                    </tr>
+                    @foreach (var Item in Model.books)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(m => Item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=> Item.Author)
+
+
+
+                            </td>
+                            <td>
+                                <button class="btn btn-primary">
+                                    Edit
+                                </button>
+                                <button class="btn btn-danger">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <p>No books Found</p>
+            }
+        </form>
+    </div>
+</div>
