@@ -1,11 +1,12 @@
 ﻿@page
-@model BooklistApp.Pages.Booklists.CreateModel
+@model BooklistApp.Pages.Booklists.EditModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Create</h1>
+<h1>Edit</h1>
 <form method="post">
+    <input type="hidden" asp-for="book.Id" />
     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
     <div class="container row">
         <div class="col">
@@ -16,18 +17,18 @@
         </div>
         <span asp-validation-for="book.Name" class="text-danger"></span>
     </div> <br>
-           <div class="container row">
-               <div class="col">
-                   <label asp-for="book.Author"></label>
-               </div>
-               <div class="col">
-                   <input asp-for="book.Author" class="form-control" />
-               </div>
-               <span asp-validation-for="book.Author" class="text-danger"></span>
-           </div> <br />
     <div class="container row">
         <div class="col">
-            <input type="submit" value="Create" class="btn btn-primary" />
+            <label asp-for="book.Author"></label>
+        </div>
+        <div class="col">
+            <input asp-for="book.Author" class="form-control" />
+        </div>
+        <span asp-validation-for="book.Author" class="text-danger"></span>
+    </div> <br />
+    <div class="container row">
+        <div class="col">
+            <input type="submit" value="Update" class="btn btn-primary" />
 
         </div>
         <div class="col">
@@ -35,6 +36,7 @@
         </div>
     </div>
 </form>
-@section Scripts{ 
-<partial name="_ValidationScriptsPartial" />
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
 }
+
