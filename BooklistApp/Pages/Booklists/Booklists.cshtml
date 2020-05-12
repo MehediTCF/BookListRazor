@@ -46,7 +46,7 @@
                                 <a class="btn btn-primary" asp-page="Edit" asp-route-id="@Item.Id">
                                     Edit
                                 </a>
-                                <input type="submit" value="Delete" asp-route-id="@Item.Id" class="btn btn-danger" />
+                                <button asp-page-handler="Delete"  onclick="return confirm('Are you sure want to delete?')" asp-route-id="@Item.Id" class="btn btn-danger">Delete</button>
              
                             </td>
                         </tr>

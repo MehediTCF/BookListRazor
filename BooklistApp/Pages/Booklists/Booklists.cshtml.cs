@@ -22,7 +22,7 @@ namespace BooklistApp.Pages.Booklists
         {
             books = await _db.booklist.ToListAsync();
         }
-        public async Task<IActionResult> OnPost(int Id)
+        public async Task<IActionResult> OnPostDelete(int Id)
         {
             var book = await _db.booklist.FindAsync(Id);
             if(book == null)
