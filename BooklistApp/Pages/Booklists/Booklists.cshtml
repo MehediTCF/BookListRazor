@@ -11,7 +11,7 @@
         <h1>Booklists</h1>
     </div>
     <div class="col-lg-6">
-        <a asp-page="Create" class="btn btn-outline-primary">
+        <a asp-page="Upsert" class="btn btn-outline-primary">
             Create New Book
         </a>
 
@@ -43,7 +43,7 @@
 
                             </td>
                             <td>
-                                <a class="btn btn-primary" asp-page="Edit" asp-route-id="@Item.Id">
+                                <a class="btn btn-primary" asp-page="Upsert" asp-route-id="@Item.Id">
                                     Edit
                                 </a>
                                 <button asp-page-handler="Delete"  onclick="return confirm('Are you sure want to delete?')" asp-route-id="@Item.Id" class="btn btn-danger">Delete</button>
